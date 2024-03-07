@@ -15,20 +15,21 @@ public class Main {
 
         var sql = "CREATE TABLE films"
                 + "(id BIGINT PRIMARY KEY AUTO_INCREMENT, title VARCHAR(255), release_year INT, duration INT)";
-
-        var statement = conn.createStatement();
-        statement.execute(sql);
-        statement.close();
+        try (var statement = conn.createStatement()) {
+            statement.executeUpdate(sql);
+        }
         // BEGIN (write your solution here)
         var sql2 = "INSERT INTO films (title, release_year, duration) VALUES ('Godfather', 1972, 175), ('The Green Mile', 1999, 189)";
-        var statement2 = conn.createStatement();
-        statement2.executeUpdate(sql2);
-        statement2.close();
+        try (var statement2 = conn.createStatement()) {
+            statement2.executeUpdate(sql2);
+        }
+
         var sql3 = "SELECT * FROM films";
-        var statement3 = conn.createStatement();
-        var resultSet = statement3.executeQuery(sql3);
-        while (resultSet.next()) {
-            System.out.println(resultSet.getString("title") + " " + resultSet.getString("release_year") + " " + resultSet.getString("duration"));
+        try (var statement3 = conn.createStatement()) {
+            var resultSet = statement3.executeQuery(sql3);
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("title") + " " + resultSet.getString("release_year") + " " + resultSet.getString("duration"));
+            }
         }
         // END
         conn.close();
