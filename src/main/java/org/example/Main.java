@@ -8,8 +8,11 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException {
 //        Main.Lesson1Theory();
-        Main.Lesson1();
+//        Main.Lesson1();
+//        Exercise3.exercise3();
+        Exercise4.exercise4();
     }
+
     public static void Lesson1() throws SQLException {
         var conn = DriverManager.getConnection("jdbc:h2:mem:hexlet");
 
