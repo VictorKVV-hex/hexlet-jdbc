@@ -17,6 +17,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.20'
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
     testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testImplementation 'org.skyscreamer:jsonassert:1.5.1'
+    implementation 'com.stephenn:scalatest-json-jsonassert_2.13:0.2.5'
+    testImplementation("org.assertj:assertj-core:3.22.0")
 }
 
 test {

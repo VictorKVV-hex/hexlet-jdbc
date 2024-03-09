@@ -1,5 +1,11 @@
 package org.example.dao;
 
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class ApplicationTest {
     // Не подключилось кактестовый класс. Узнать, как сделать тестовый класс, если нет директории "test'
     @Test
